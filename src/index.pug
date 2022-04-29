@@ -1,0 +1,190 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Фотостудия High Pass
+    link(rel="shortcut icon", href="images/png/favicon.png", type="image/x-icon")
+    link(rel="stylesheet" href="styles.css")
+
+    link(rel="preload", href="fonts/roboto-bold.woff", as="font")
+    link(rel="preload", href="fonts/roboto-bold.woff2", as="font")
+    link(rel="preload", href="fonts/roboto-regular.woff", as="font")
+    link(rel="preload", href="fonts/roboto-regular.woff2", as="font")
+    link(rel="preload", href="fonts/ttfirsneue-bold.woff", as="font")
+    link(rel="preload", href="fonts/ttfirsneue-bold.woff2", as="font")
+    link(rel="preload", href="fonts/ttfirsneue-regular.woff", as="font")
+    link(rel="preload", href="fonts/ttfirsneue-regular.woff2", as="font")
+
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU", type="text/javascript")
+    script(src="just-validate.min.js", type="text/javascript")
+  body.body
+    - var navListItems = [{name: "О студии", href: "#about"}, {name: "Наши проекты", href: "#our-projects"}, {name: "Услуги", href: "#service"}, {name: "Мастер-классы", href: "#masterclasses"}, {name: "Контакты", href: "#contacts"}]
+    - var socialListItems = [{link: "https://vk.com", icon: "images/svg/sprite.svg#vk"}]
+    - var previousWorksSectionItems = [{class: "previous-works-section__main-picture-item", pictureMobileSizeS: "images/photos/mobile_size_s/example1.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/example1.jpg", pictureTablet: "images/photos/tablet/example1.jpg", pictureDesktop: "images/photos/desktop/example1.jpg", pictureDescription: "Работа участника"}, {pictureMobileSizeS: "images/photos/mobile_size_s/example2.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/example2.jpg", pictureTablet: "images/photos/tablet/example2.jpg", pictureDesktop: "images/photos/desktop/example2.jpg", pictureDescription: "Работа участника"}, {pictureMobileSizeS: "images/photos/mobile_size_s/example3.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/example3.jpg", pictureTablet: "images/photos/tablet/example3.jpg", pictureDesktop: "images/photos/desktop/example3.jpg", pictureDescription: "Работа участника"}]
+    - var ourProjectsItems = [{listItemClass: "our-projects-section__list-item_1", pictureMobileSizeS: "images/photos/mobile_size_s/projects1.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/projects1.jpg", pictureTablet: "images/photos/tablet/projects1.jpg", pictureDesktop: "images/photos/desktop/projects1.jpg", pictureDescription: "Пейзаж", category: "Пейзаж", description: "Синтетически смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности", date: "16 июня"}, {listItemClass: "our-projects-section__list-item_2", pictureMobileSizeS: "images/photos/mobile_size_s/projects2.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/projects2.jpg", pictureTablet: "images/photos/tablet/projects2.jpg", pictureDesktop: "images/photos/desktop/projects2.jpg", pictureDescription: "Портрет человека", category: "Портрет", description: "В своем стремлении улучшить опыт мы упускаем, что интерактивные прототипы лишь добавляют фракционных разногласий и призваны к ответу", date: "28 мая"}, {listItemClass: "our-projects-section__list-item_3", pictureMobileSizeS: "images/photos/mobile_size_s/projects3.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/projects3.jpg", pictureTablet: "images/photos/tablet/projects3.jpg", pictureDesktop: "images/photos/desktop/projects3.jpg", pictureDescription: "Натюрморт", category: "Предмет", description: " Равным образом, высокое качество позиционных исследований выявляет срочную потребность приоретизации разума над эмоциями", date: "14 мая"}, {listItemClass: "our-projects-section__list-item_4", pictureMobileSizeS: "images/photos/mobile_size_s/projects4.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/projects4.jpg", pictureTablet: "images/photos/tablet/projects4.jpg", pictureDesktop: "images/photos/desktop/projects4.jpg", pictureDescription: "Пейзаж", category: "Проектзабвение", description: "Играет важную роль в формировании глубокомысленных рассуждений, а также перспективное планирование требует определения и уточнения как самодостаточных, так и внешне зависимых концептуальных решений", date: "20 марта", main: true, heading:"Забвение", button: "О проекте"}, {listItemClass: "our-projects-section__list-item_5", pictureMobileSizeS: "images/photos/mobile_size_s/projects5.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/projects5.jpg", pictureTablet: "images/photos/tablet/projects5.jpg", pictureDesktop: "images/photos/desktop/projects5.jpg", pictureDescription: "Портрет", category: "Fuji", description: "В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления", date: "9 апреля", main: true, heading:"Семантический разбор", button: "О проекте"}, {listItemClass: "our-projects-section__list-item_6", pictureMobileSizeS: "images/photos/mobile_size_s/projects6.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/projects6.jpg", pictureTablet: "images/photos/tablet/projects6.jpg", pictureDesktop: "images/photos/desktop/projects6.jpg", pictureDescription: "Натюрморт", category: "Ретушь", description: "Как принято считать, многие известные личности и по сей день остаются уделом либералов, которые жаждут быть превращены в посмешище, хотя само их существование приносит несомненную пользу обществу", date: "9 марта"}, {listItemClass: "our-projects-section__list-item_7", pictureMobileSizeS: "images/photos/mobile_size_s/projects7.jpg", pictureMobileSizeL: "images/photos/mobile_size_l/projects7.jpg", pictureTablet: "images/photos/tablet/projects7.jpg", pictureDesktop: "images/photos/desktop/projects7.jpg", pictureDescription: "Портрет", category: "Портрет", description: "С учётом сложившейся международной обстановки, новая модель организационной деятельности создаёт предпосылки для экономической целесообразности принимаемых решений", date: "1 марта"}]
+
+    mixin logo()
+      .logo&attributes(attributes)
+          svg(viewBox="0 0 191 31")
+            use(href="images/svg/sprite.svg#logo")
+
+    mixin social()
+      ul.social-list&attributes(attributes)
+        each socialListItem in socialListItems
+          li
+            a.social-list__link(href= socialListItem.link)
+              svg.social-list__icon(viewBox="0 0 30 30")
+                use(href= socialListItem.icon)
+
+    h1.sr-only Фотостудия High Pass
+
+    header.header
+      .container.header__container
+        +logo(class="header__logo")
+
+        nav.nav.header__nav
+          button#header__burger.burger
+            span.burger__bar
+            span.burger__bar
+            span.burger__bar
+
+          ul#header__nav.nav-list.header__nav-list
+            each navListItem in navListItems
+              li.nav-list__item
+                a.nav-list__link(href= navListItem.href)= navListItem.name
+
+        form.search-form.header__search-form(action="https://jsonplaceholder.typicode.com/gets", method="get")
+          button#search-form__button.search-form__button
+            svg(viewBox="0 0 25 25")
+              use(href="images/svg/sprite.svg#search")
+
+          input#search-form__input.search-form__input.search-form__input_hidden(type="text", name="search", placeholder="Что будем искать?")
+
+        +social(class="header__social-list")
+
+    main.main
+      .container.container_two-columns.first-section
+        section.masterclass-section
+          picture.masterclass-section__background-img
+            source(media="(max-width: 767px)", srcset="images/photos/mobile_size_s/masterclass.jpg")
+            source(media="(min-width: 768px) and (max-width:1023px)", srcset="images/photos/mobile_size_l/masterclass.jpg")
+            source(media="(min-width: 1024px) and (max-width: 1366px)", srcset="images/photos/tablet/masterclass.jpg")
+            img(src="images/photos/desktop/masterclass.jpg", alt="Фотография с мастеркласса")
+
+          .masterclass-section__content
+            span.category.masterclass-section__category Мастеркласс
+            span.masterclass-section__comment Мастер-класс от Игоря Робова
+            h2.heading.masterclass-section__heading Неоновый фотосет 2.0 7&nbsp;июля 20:00
+            a.button.masterclass-section__button(href="#") Узнать больше
+
+        section.previous-works-section
+          h2.heading.previous-works-section__heading Работы участников предыдущего мастер-класса
+
+          ul.previous-works-section__list
+            each previousWorksSectionItem in previousWorksSectionItems
+              li(class= previousWorksSectionItem.class)
+                picture.previous-works-section__picture
+                  source(media="(max-width: 767px)", srcset= previousWorksSectionItem.pictureMobileSizeS)
+                  source(media="(min-width: 768px) and (max-width:1023px)", srcset= previousWorksSectionItem.pictureMobileSizeL)
+                  source(media="(min-width: 1024px) and (max-width: 1366px)", srcset= previousWorksSectionItem.pictureTablet)
+                  img(src= previousWorksSectionItem.pictureDesktop, alt= previousWorksSectionItem.pictureDescription)
+
+      section#about.about-section
+        .container.about-section__container
+          .about-section_left-column
+            h2.heading.about-section__heading О студии
+            p.about-section__text В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально&#8209;технической и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.
+
+          .about-section_right-column
+            h3.heading.about-section__subscribe-heading Подписаться на рассылку
+
+            form.about-section__form(action="https://jsonplaceholder.typicode.com/posts", method="post")
+              input.input.about-section__input(type="email", name="email", placeholder="Email", data-validate-field="email", autocomplete="on", required)
+              button.button(type="submit") Отправить
+
+      section.our-projects-section#our-projects
+        .container
+          h2.heading.our-projects-section__heading Наши проекты
+
+          ul.our-projects-section__list
+            each ourProjectsItem in ourProjectsItems
+              li(class= ourProjectsItem.listItemClass)
+                article.article
+                  picture.article__img
+                    source(media="(max-width: 767px)", srcset= ourProjectsItem.pictureMobileSizeS)
+                    source(media="(min-width: 768px) and (max-width:1023px)", srcset= ourProjectsItem.pictureMobileSizeL)
+                    source(media="(min-width: 1024px) and (max-width: 1366px)", srcset= ourProjectsItem.pictureTablet)
+                    img(src= ourProjectsItem.pictureDesktop, alt= ourProjectsItem.pictureDescription)
+
+                  if ourProjectsItem.main
+                    .main-article__content
+                      span.category.article__category= ourProjectsItem.category
+                      h3.heading.article__heading= ourProjectsItem.heading
+                      p.article__description= ourProjectsItem.description
+                      button.button.article__button= ourProjectsItem.button
+                      span.article__date= ourProjectsItem.date
+                  else
+                    span.category.article__category= ourProjectsItem.category
+                    p.article__description= ourProjectsItem.description
+                    span.article__date= ourProjectsItem.date
+
+
+      .container.container_two-columns.address-section#contacts
+        address.address
+          h2.heading.address__heading Контакты
+
+          .address__wrapper
+            div.address__map#map
+
+            button.open-close-btn.open-btn.address__open-btn#address__open-btn
+              .open-btn__bar-wrapper
+                span.open-btn__bar
+                span.open-btn__bar
+
+            .address__content#address__content
+              button.open-close-btn.close-btn.address__close-btn#address__close-btn
+                span.close-btn__bar
+                span.close-btn__bar
+
+              span.address__name Студия “High pass”
+
+              p.address__description 107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис&nbsp;№&nbsp;82
+                a.address__phone-link(href="tel:749542423532") +7 (495) 42-423-532
+                  svg.address__phone-icon(viewBox="0 0 30 30")
+                    use(href="images/svg/sprite.svg#call")
+
+        .apply-section
+          h3.heading.apply-section__heading Оставить заявку
+
+          p.apply-section__description Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
+
+          form.apply-form(action="https://jsonplaceholder.typicode.com/posts", method="post")
+            ul
+              li.apply-form__item
+                input.input(type="text", name="name", placeholder="Имя", data-validate-field="name")
+
+              li.apply-form__item
+                input.input(type="email", name="email", placeholder="E-mail", data-validate-field="email")
+
+              li.apply-form__item
+                textarea.input.apply-section__textarea(name="comment", placeholder="Комментарий", data-validate-field="text")
+
+            button.button.apply-form__button(type="submit") Отправить
+
+    footer.footer
+      .container.footer__container
+        .footer__logo-wrapper
+          +logo()
+          span Фотостудия High pass® 2018-2020
+
+        .footer__quote
+          p Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра.
+          span.footer__quote-author © Имоджен Каннингем
+
+        .footer__social-wrapper
+          span Больше интересного
+          +social()
+
+    script(src="main.js", type="text/javascript")
